@@ -7,7 +7,7 @@ class MainController < ApplicationController
     lastitem = Main.find(1)
     last = lastitem.updated_at
     now = Time.new
-    if now - last > 60 then
+    if now - last > 86400 then
       ScrawController.new.scrawl
       lastitem.update(last: now)
     end

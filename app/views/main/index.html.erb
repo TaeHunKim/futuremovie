@@ -1,7 +1,48 @@
 <html>
   <head>
+    <style>
+      div
+      {
+        width : 31%;
+        float : left;
+        padding : 1%;
+        height : 600px;
+      }
+      img
+      {
+        margin-left : 33%;
+        width : 33%;
+      }
+      h1
+      {
+        text-align : center;
+        font-size : 30px;
+      }
+      h2
+      {
+        text-align : center;
+        font-size : 14px;
+      }
+      p
+      {
+        width : 20%;
+        margin-left : 40%;
+        padding : 5px;
+        color : #444444;
+        background-color : #dddddd;
+        font-size : 14px;
+        vertical-align : middle;
+        border-radius : 4px;
+        text-align : center
+      }
+      a{
+        color : #444444;
+        text-decoration:none !important;
+      }
+    </style>
   </head>
   <body>
+    <div style="width : 70%;margin-left:15%">
     <% @mains.each do |a| %>
       <div>
         <img src = <%= a.poster %> >
@@ -11,10 +52,11 @@
         <h2> 상세 : 
           <%= a.description %>
         </h2>
-        <h2> 링크 : 
-          <%= a.link %>
-        </h2>
+        <p> 
+          <%= link_to "자세히 보기", a.link %>
+        </p>
       </div>
     <% end %>
+  </div>
   </body>
 </html>
