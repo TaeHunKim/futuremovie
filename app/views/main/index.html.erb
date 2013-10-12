@@ -1,0 +1,20 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <% @mains.each do |a| %>
+      <div>
+        <img src = <%= a.poster %> >
+        <h1> 제목 : 
+          <%= a.title %>
+        </h1>
+        <h2> 상세 : 
+          <%= a.description %>
+        </h2>
+        <h2> 링크 : 
+          <%= a.link %>
+        </h2>
+      </div>
+    <% end %>
+  </body>
+</html>
