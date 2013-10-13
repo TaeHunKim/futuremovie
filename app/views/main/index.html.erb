@@ -1,32 +1,44 @@
 <html>
   <head>
     <style>
-      div
+      .out
       {
-        width : 31%;
+        width : 60%;
+        margin : 3%;
+        height : 400px;
+      }
+      .in_left
+      {
+        position : relative;
+        width : 20%;
         float : left;
-        padding : 1%;
-        height : 600px;
+      }
+      .in_right
+      {
+        position : relative;
+        width : 60%;
+        float : left;
       }
       img
       {
-        margin-left : 33%;
-        width : 33%;
+        width : auto;
+        height : 200px;
+        margin-left:40px;
       }
       h1
       {
-        text-align : center;
+        text-align : left;
         font-size : 30px;
       }
       h2
       {
-        text-align : center;
+        text-align : left;
         font-size : 14px;
       }
       p
       {
-        width : 20%;
-        margin-left : 40%;
+        width : 50%;
+        margin-left : 23%;
         padding : 5px;
         color : #444444;
         background-color : #dddddd;
@@ -42,19 +54,23 @@
     </style>
   </head>
   <body>
-    <div style="width : 70%;margin-left:15%">
+    <div style="width : 100%">
     <% @mains.each do |a| %>
-      <div>
-        <img src = <%= a.poster %> >
-        <h1> 제목 : 
-          <%= a.title %>
-        </h1>
-        <h2> 상세 : 
-          <%= a.description %>
-        </h2>
-        <p> 
-          <%= link_to "자세히 보기", a.link %>
-        </p>
+      <div class = "out">
+        <div class = "in_left">
+          <img src = <%= a.poster %> >
+          <p> 
+            <%= link_to "자세히 보기", a.link %>
+          </p>
+        </div>
+        <div class = "in_right">
+          <h1> 제목 : 
+            <%= a.title %>
+          </h1>
+          <h2> 상세 : 
+            <%= a.description %>
+          </h2>
+        </div>
       </div>
     <% end %>
   </div>
